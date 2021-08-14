@@ -45,7 +45,7 @@ const App = () => {
 
   return (
     <div id="app" className="App-header">
-      <h1>QA BOX LET'S TEST</h1>
+      <h1>QA BOX LET'S TEST - TABLE</h1>
       <div id="grid" className="ag-theme-alpine" style={{ height: 350, width: '100%', marginTop: '2%' }} >
         <button onClick={onButtonClick} style={{ backgroundColor: 'burlywood', borderRadius: '5px', fontSize: '20px' }}>Get selected users</button>
         <AgGridReact
