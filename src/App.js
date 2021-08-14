@@ -11,7 +11,7 @@ const App = () => {
   const [gridColumnApi, setGridColumnApi] = useState(null);
 
   const pagination = true;
-  const paginationPageSize = 3
+  const paginationPageSize = 10
 
   const defaultColDef = {
     // make every column editable
@@ -46,7 +46,7 @@ const App = () => {
   return (
     <div id="app" className="App-header">
       <h1>QA BOX LET'S TEST</h1>
-      <div id="grid" className="ag-theme-alpine" style={{ height: 300, width: '100%', marginTop: '5%' }} >
+      <div id="grid" className="ag-theme-alpine" style={{ height: 350, width: '100%', marginTop: '2%' }} >
         <button onClick={onButtonClick} style={{ backgroundColor: 'burlywood', borderRadius: '5px', fontSize: '20px' }}>Get selected users</button>
         <AgGridReact
           pagination={pagination}
