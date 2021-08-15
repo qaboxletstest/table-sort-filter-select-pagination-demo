@@ -11,16 +11,18 @@ const App = () => {
   const [gridColumnApi, setGridColumnApi] = useState(null);
 
   const pagination = true;
-  const paginationPageSize = 10
+  const paginationPageSize = 3
 
   const defaultColDef = {
     // make every column editable
     editable: true,
     // make every column use 'text' filter by default
-    filter: 'agTextColumnFilter',
+    filter: true,
+    floatingFilter: true,
     sortable: true,
     resizable: true,
     headerHeight: 150,
+    flex: 1,
   };
 
   const onGridReady = (params) => {
@@ -53,6 +55,7 @@ const App = () => {
           paginationPageSize={paginationPageSize}
           rowData={rowData}
           rowDragManaged={true}
+          animateRows={true}
           defaultColDef={defaultColDef}
           ref={gridRef}
           rowSelection="multiple"
