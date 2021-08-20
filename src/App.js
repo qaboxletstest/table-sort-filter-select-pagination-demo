@@ -10,9 +10,6 @@ const App = () => {
   const [gridApi, setGridApi] = useState(null);
   const [gridColumnApi, setGridColumnApi] = useState(null);
 
-  const pagination = true;
-  const paginationPageSize = 3
-
   const defaultColDef = {
     // make every column editable
     editable: true,
@@ -47,24 +44,22 @@ const App = () => {
 
   return (
     <div id="app" className="App-header">
-      <h1>QA BOX LET'S TEST - TABLE</h1>
-      <div id="grid" className="ag-theme-alpine" style={{ height: 350, width: '100%', marginTop: '2%' }} >
+      <h1 style={{ marginTop: '0.2px' }}>QA BOX LET'S TEST - TABLE</h1>
+      <h4 style={{ fontSize: '20px', color: 'white', marginTop: '0px' }}>Table with Client-Side Pagination, Filter and Sorting</h4>
+      <div id="grid" className="ag-theme-alpine" style={{ height: 300, width: '100%' }} >
         <button onClick={onButtonClick} style={{ backgroundColor: 'burlywood', borderRadius: '5px', fontSize: '20px' }}>Get selected users</button>
         <AgGridReact
-          pagination={pagination}
-          paginationPageSize={paginationPageSize}
-          rowData={rowData}
-          rowDragManaged={true}
-          animateRows={true}
+          pagination={true}
+          paginationPageSize={6}
           defaultColDef={defaultColDef}
           ref={gridRef}
           rowSelection="multiple"
-          suppressDragLeaveHidesColumns={true}
+          rowData={rowData}
           onGridReady={onGridReady}>
-          <AgGridColumn field="id" checkboxSelection={true} rowDrag={true}></AgGridColumn>
+          <AgGridColumn field="id" checkboxSelection={true}></AgGridColumn>
           <AgGridColumn field="email"></AgGridColumn>
           <AgGridColumn field="first_name"></AgGridColumn>
-          <AgGridColumn field="last_name" sr></AgGridColumn>
+          <AgGridColumn field="last_name"></AgGridColumn>
           <AgGridColumn field="avatar"></AgGridColumn>
         </AgGridReact>
       </div>
